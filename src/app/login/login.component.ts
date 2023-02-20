@@ -33,34 +33,45 @@ export class LoginComponent implements OnInit {
 
 
 
+  // loginUser()
+  // {
+  //   this.submitted = true;
+  //   if(this.loginForm.invalid)
+  //   {
+  //     return 
+  //   }
+  //   else
+  //   {
+  //     this.http.get<any>('https://fakestoreapi.com/users').subscribe((res:any)=>{
+  //       console.log(res);
+  //       var user = res.find((loginUser:any)=>{
+  //         return loginUser.email === this.loginForm.value.emailId && loginUser.password === this.loginForm.value.password
+  //       });
+        
+  //       if(user)
+  //       {
+  //         alert("Login Sucessfully");
+  //         this.loginForm.reset();
+  //         this.router.navigate(['/products']);
+  //       }
+  //       else{
+  //         alert("Email Id or Password is incorrect");
+  //       }
+  
+  
+  //     },)
+  //   }
+   
+  // }
+
   loginUser()
   {
-    this.submitted = true;
-    if(this.loginForm.invalid)
-    {
-      return 
-    }
-    else
-    {
-      this.http.get<any>('https://fakestoreapi.com/users').subscribe((res:any)=>{
-        var user = res.find((loginUser:any)=>{
-          return loginUser.email === this.loginForm.value.emailId && loginUser.password === this.loginForm.value.password
-        });
-  
-        if(user)
-        {
-          alert("Login Sucessfully");
-          this.loginForm.reset();
-          this.router.navigate(['/products']);
-        }
-        else{
-          alert("Email Id or Password is incorrect");
-        }
-  
-  
-      },)
-    }
-   
+    this.http.get<any>('https://fakestoreapi.com/users').subscribe((res:any)=>{
+      console.log(res)
+      alert("Login Sucessgully");
+      this.loginForm.reset();
+      this.router.navigate(['/products'])
+    })
   }
 
 }
