@@ -1,0 +1,46 @@
+<div class="container-fluid col-3">
+    <div class="card mt-4" >
+        <div class="card-header">
+            <h3>
+                Sign In
+            </h3>
+          
+        </div>
+        <form [formGroup]="loginForm">
+            <div class=" px-2 py-2 pt-4">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="emailId" id="exampleFormControlInput1" placeholder="Enter User Name">
+                <div *ngIf="submitted && f['emailId']?.['errors']">
+                    <span class="txtdanger" *ngIf="f['emailId'].errors?.['required']">Email is Required</span>
+                </div>
+                <!-- <span class="txtdanger" *ngIf="loginForm.get('emailId')?.hasError('required') && loginForm.get('emailId')?.touched">User Name Required</span> -->
+            </div>
+            
+    
+            <div class=" px-2 py-2 pt-2">
+                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password" id="exampleFormControlInput1" placeholder="Enter Password">
+                <div *ngIf="submitted && f['password']?.['errors']">
+                    <span class="txtdanger" *ngIf="f['password'].errors?.['required']">Password  is Required</span>
+                </div>
+                <!-- <span class="txtdanger" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">Password Required</span> -->
+            </div>
+        </form>
+
+        <div class=" px-2 py-2 pt-4">
+            <button class="btn btn-primary col-12"  (click)="loginUser()">Login</button>
+        </div>
+
+        <div class="mb-3 px-2 py-2 pt-4">
+            <span>
+                You may create a new account here <a class="btn btn-link" routerLink="register">Click here</a>
+
+            </span>
+        </div>
+
+        
+    </div>
+</div>
+
+
+

@@ -1,0 +1,16 @@
+a:active{
+    border-bottom: 2px solid wheat;
+    color: white;
+}
+
+/* a:hover{
+    background-color: #333536;
+    border-bottom: 2px solid wheat;
+    color: white;
+
+}
+*/
+a{
+    text-decoration: none;
+    color: black;
+}

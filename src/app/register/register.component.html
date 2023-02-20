@@ -1,0 +1,144 @@
+<div class="container-fluid col-8">
+    <div class="text-center">
+        <h3> Request a New Account</h3>
+        <h4>
+         <span>If you already have an account, <a class="btn btn-link" (click)="toLoginPage()" style="font-size: 20px;">log in here</a></span> 
+
+        </h4>
+     </div>
+    <div class="card mt-4" >
+      
+        <div class="card-header">
+            <h3>
+                Register
+            </h3>
+          
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="registerFrom">
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class=" px-2 py-2 pt-4">
+
+                                <label class="form-label">Email Address</label>
+                                <input type="email"  class="form-control input" name="emailAddress" formControlName="emailAddress" placeholder="Enter Email Address">
+                                <div *ngIf="submitted && f['emailAddress']?.['errors']">
+                                    <span class="txtdanger" *ngIf="f['emailAddress'].errors?.['required']">Email Address is Required</span>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                       
+
+                        <div class="col-lg-6">
+                            <div class=" px-2 py-2 pt-4">
+
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" formControlName="password" placeholder="Enter Password">
+                                <div *ngIf="submitted && f['password']?.['errors']">
+                                    <span class="txtdanger" *ngIf="f['password'].errors?.['required']">Password is Required</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <!-- <div class="col-lg-6">
+                            <div class=" px-2 py-2 pt-4">
+                                <label class="form-label">Confirm Password</label>
+
+                                <input type="password" class="form-control" name="confirmPassword" formControlName="confirmPassword" placeholder="Confrim Password">
+                                <div *ngIf="submitted && f['confirmPassword']?.['errors']">
+                                    <span class="txtdanger" *ngIf="f['confirmPassword'].errors?.['required']">Confirm Password is Required</span>
+                                    <span class="txtdanger" *ngIf="f['confirmPassword'].errors?.['MustMatch']">Confirm Password did'nt match</span>
+
+                                </div>
+
+                            </div>
+                        </div> -->
+
+                        <div class="col-lg-6">
+                            <div class=" px-2 py-2 pt-4">
+                                <label class="form-label">First Name</label>
+
+                                <input type="text" class="form-control" name="firstName" formControlName="firstName" placeholder="Enter First Name">
+                                <div *ngIf="submitted && f['firstName']?.['errors']">
+                                    <span class="txtdanger" *ngIf="f['firstName'].errors?.['required']">First Name is Required</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class=" px-2 py-2 pt-4">
+
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+                                <div *ngIf="submitted && f['lastName']?.['errors']">
+                                    <span class="txtdanger" *ngIf="f['lastName'].errors?.['required']">Last Name is Required</span>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- <div class="col-lg-12">
+                    <div class="row">
+                      
+                        <div class="col-lg-6">
+                            <div class=" px-2 py-2 pt-4">
+
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+                                <div *ngIf="submitted && f['lastName']?.['errors']">
+                                    <span class="txtdanger" *ngIf="f['lastName'].errors?.['required']">Last Name is Required</span>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div> -->
+
+
+               
+            </form>
+          
+
+    
+            <div class=" px-2 py-2 pt-4 float-end">
+                <button class="btn btn-primary me-2 " (click)="registerUser()">Save</button>
+                <button class="btn btn-danger " (click)="resetUser()">Reset</button>
+
+            </div>
+    
+            <div class="mb-3 px-2 py-2 pt-4">
+                <span>
+                    Existing User <a (click)="toLoginPage()" class="btn btn-link">Click here</a>
+    
+                </span>
+            </div>
+
+        </div>
+        
+
+        
+    </div>
+</div> 
+
